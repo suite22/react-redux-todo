@@ -5,23 +5,24 @@ var host = os.hostname();
 var buildPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
-  	entry: './src/app.jsx',
+  	entry: './main.js',
 	output: {
 		filename: 'bundle.js',
-		path: buildPath,
+		path: './',
+	},
+	devServer: {
+		inline: true,
+		port: 3535
 	},
 	module: {
 		loaders: [
 			{
-			  loader: "babel-loader",
-
-			  // Skip any files outside of your project's `src` directory
-			  include: [
-				path.resolve(__dirname, "src"),
-			  ],
-
 			  // Only run `.js` and `.jsx` files through Babel
 			  test: /\.jsx?$/,
+			  
+			  exclude: /node_modules/,
+			  
+			  loader: "babel",
 
 			  // Options to configure babel with
 			  query: {
