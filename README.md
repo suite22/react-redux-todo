@@ -27,6 +27,7 @@ As a user, I need a way to keep track of a list of tasks that I need to do today
 
 
 # Technical Approach
+The goal is to build a nice example using React and Redux. 
 ## Install Dev Environment
 * Make sure nvm is using the latest stable version instead of the system version.
 * npm install webpack -g
