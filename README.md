@@ -7,7 +7,7 @@ Please consider testability, documentation, and other good coding practices in y
 ## The Problem:
 As a user, I need a way to keep track of a list of tasks that I need to do today, so that I can keep on task.
 
-## Acceptance Criteria:
+### Acceptance Criteria:
 1. View a list of tasks that I have previously created
 
 2. Add new tasks
@@ -18,21 +18,23 @@ As a user, I need a way to keep track of a list of tasks that I need to do today
 
 5. Edit tasks
 
-## Bonus: 
+### Bonus: 
 1. Persist tasks through session
 
 2. Share tasks with others
 
 3. Restore removed tasks.
 
+---
 
-# Technical Approach
+## The Solution
 The goal is to build a nice example using React and Redux. 
-## Install Dev Environment
+
+### Install Dev Environment
 * Make sure nvm is using the latest stable version instead of the system version.
 * npm install webpack -g
 * npm install webpack-dev-server -g
 * npm install 
 
-## Start the Webpack Dev server
+### Start the Webpack Dev server
 * npm start
