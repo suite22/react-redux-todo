@@ -24,3 +24,14 @@ As a user, I need a way to keep track of a list of tasks that I need to do today
 2. Share tasks with others
 
 3. Restore removed tasks.
+
+
+# Technical Approach
+## Install Dev Environment
+* Make sure nvm is using the latest stable version instead of the system version.
+* npm install webpack -g
+* npm install webpack-dev-server -g
+* npm install 
+
+## Start the Webpack Dev server
+* npm start
