@@ -20,3 +20,22 @@ class App extends React.Component {
 		)
 	}
 }
+
+function selectTodos(todos, filter) {
+	switch (filter) {
+		default:
+			return todos
+	}
+}
+
+App.propTypes = {
+	dispatch: React.PropTypes.func.isRequired
+}
+
+function select(state) {
+	return {
+		visibleTodos: state.todos
+	}
+}
+
+export default connect(select)(App)
