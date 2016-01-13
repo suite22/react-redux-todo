@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class Todo extends Component {
+export default class Todo extends React.Component {
 	render() {
 		return (
 			<li
@@ -10,4 +10,10 @@ export default class Todo extends Component {
 			</li>
 		)
 	}
+}
+
+Todo.propTypes = {
+	onClick: React.PropTypes.func.isRequired,
+	text: React.PropTypes.string.isRequired,
+	completed: React.PropTypes.bool.isRequired
 }
