@@ -13,16 +13,15 @@ export default class TodoList extends React.Component {
 						/>
 					)}
 				</ul>
-				<input placeholder="input todo"></input>
 			</div>
 		)
 	}
 }
 
 TodoList.propTypes = {
-	onTodoClick: propTypes.func.isRequired,
-	todos: PropTypes.arrayOf(PropTypes.shape({
-		text: PropTypes.string.isRequired,
-		completed: PropTypes.bool.isRequired
+	onTodoClick: React.PropTypes.func.isRequired,
+	todos: React.PropTypes.arrayOf(React.PropTypes.shape({
+		text: React.PropTypes.string.isRequired,
+		completed: React.PropTypes.bool.isRequired
 	}).isRequired).isRequired
 }
