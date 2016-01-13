@@ -1,5 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo, completeTodo } from '../actions'
-import AddTodo from 'AddTodo'
-import TodoList from 'TodoList'
+import AddTodo from './AddTodo'
+import TodoList from './TodoList'
