@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo, completeTodo, setVisibilityFilter, VisibilityFilters } from '../actions'
+import { addTodo, toggleTodo, setVisibilityFilter, VisibilityFilters } from '../actions'
 import AddTodo from './AddTodo'
 import TodoList from './TodoList'
 
@@ -14,7 +14,7 @@ class App extends React.Component {
 				/>
 				<TodoList
 					todos = { visibleTodos }
-					onTodoClick = { id => dispatch(completeTodo(id))}
+					onTodoClick = { id => dispatch(toggleTodo(id))}
 				/>
 			</div>
 		)
