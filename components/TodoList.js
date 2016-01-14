@@ -5,14 +5,14 @@ export default class TodoList extends React.Component {
 	render() {
 		return (
 			<div>
-				<ul>
+				<div>
 					{this.props.todos.map(todo =>
 						<Todo { ...todo }
 							key = { todo.id }
 							onClick = { () => this.props.onTodoClick(todo.id)}
 						/>
 					)}
-				</ul>
+				</div>
 			</div>
 		)
 	}

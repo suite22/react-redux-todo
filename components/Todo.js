@@ -8,14 +8,14 @@ export default class Todo extends React.Component {
 					type = "checkbox"
 					onClick = { this.props.onClick }
 				/>
-				<li
+				<label
 					style={{
 	        			textDecoration: this.props.completed ? 'line-through' : 'none',
 	        			cursor: this.props.completed ? 'default' : 'pointer'
 	        		}}
 				>
 				{ this.props.text }
-				</li>
+				</label>
 			</div>
 		)
 	}
