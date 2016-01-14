@@ -19,7 +19,10 @@ export function addTodo(text) {
 }
 
 export function completeTodo(id) {
-	return { type: COMPLETE_TODO, id }
+	return { 
+		id,
+		type: COMPLETE_TODO
+	}
 }
 
 export function setVisibilityFilter(filter) {

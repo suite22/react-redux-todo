@@ -26,7 +26,7 @@ function todo(state, action) {
 			}
 			return {
 				id: action.id,
-				text: action.text,
+				text: state.text,
 	        	completed: true
 	        }
 		default:
@@ -42,8 +42,8 @@ function todos(state = [], action) {
 				todo(undefined, action)
 			]
 		case COMPLETE_TODO:
-			return state.map(t =>
-				todo(t, action)
+			return state.map(task =>
+				todo(task, action)
 			)
 		default:
 			return state
