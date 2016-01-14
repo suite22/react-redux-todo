@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { addTodo, toggleTodo, setVisibilityFilter, VisibilityFilters } from '../actions'
 import AddTodo from './AddTodo'
 import TodoList from './TodoList'
+import Footer from './Footer'
 
 class App extends React.Component {
 	render() {
@@ -15,6 +16,8 @@ class App extends React.Component {
 				<TodoList
 					todos = { visibleTodos }
 					onTodoClick = { id => dispatch(toggleTodo(id))}
+				/>
+				<Footer
 				/>
 			</div>
 		)
