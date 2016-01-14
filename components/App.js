@@ -18,6 +18,8 @@ class App extends React.Component {
 					onTodoClick = { id => dispatch(toggleTodo(id))}
 				/>
 				<Footer
+					filter = { visibilityFilter }
+					onFilterChange = { nextFilter => dispatch(setVisibilityFilter(nextFilter))}
 				/>
 			</div>
 		)
