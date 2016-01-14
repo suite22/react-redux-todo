@@ -6,7 +6,7 @@ export default class Todo extends React.Component {
 			<div>
 				<input 
 					type = "checkbox"
-					onClick = { this.props.onClick }
+					onClick = { this.props.onCheckboxClick }
 				/>
 				<label
 					style={{
@@ -16,13 +16,18 @@ export default class Todo extends React.Component {
 				>
 				{ this.props.text }
 				</label>
+				<button
+					onClick = { this.props.onEditClick} 
+				>
+					Edit
+				</button>
 			</div>
 		)
 	}
 }
 
 Todo.propTypes = {
-	onClick: React.PropTypes.func.isRequired,
+	onCheckboxClick: React.PropTypes.func.isRequired,
 	text: React.PropTypes.string.isRequired,
 	completed: React.PropTypes.bool.isRequired
 }

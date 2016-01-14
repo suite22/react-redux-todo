@@ -9,7 +9,7 @@ export default class TodoList extends React.Component {
 					{this.props.todos.map(todo =>
 						<Todo { ...todo }
 							key = { todo.id }
-							onClick = { () => this.props.onTodoClick(todo.id)}
+							onCheckboxClick = { () => this.props.onTodoClick(todo.id)}
 						/>
 					)}
 				</div>
