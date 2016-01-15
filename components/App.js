@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo, editTodo, toggleTodo, toggleEditing } from '../actions'
+import { addTodo, editTodo, deleteTodo, toggleTodo, toggleEditing } from '../actions'
 import AddTodo from './AddTodo'
 import TodoList from './TodoList'
 import Footer from './Footer'
@@ -15,6 +15,7 @@ class App extends React.Component {
 					onTodoClick = { id => dispatch(toggleTodo(id))}
 					onEdit = { id => dispatch(toggleEditing(id))}
 					onSave = { (text, todo) => dispatch(editTodo(text, todo))}
+					onDelete = { id => dispatch(deleteTodo(id))}
 				/>
 				<AddTodo
 					onAddSubmit = { text => dispatch(addTodo(text))} 

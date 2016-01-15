@@ -10,6 +10,11 @@ export default class Todo extends React.Component {
 		}
 	}
 	
+	handleDelete(event) {
+		event.preventDefault()
+		this.props.onDeleteSubmit()
+	}
+	
 	render() {
 		var isEditing
 		
@@ -30,6 +35,11 @@ export default class Todo extends React.Component {
 					>
 					{ this.props.text }
 					</label>
+					<form onSubmit = { (event) => this.handleDelete(event)}>
+						<button>
+							Delete
+						</button>
+					</form>
 				</div>
 			)
 		} else {
@@ -55,6 +65,7 @@ export default class Todo extends React.Component {
 Todo.propTypes = {
 	onCheckboxClick: React.PropTypes.func.isRequired,
 	onSaveSubmit: React.PropTypes.func.isRequired,
+	onDeleteSubmit: React.PropTypes.func.isRequired,
 	onEditClick: React.PropTypes.func.isRequired,
 	text: React.PropTypes.string.isRequired,
 	editing: React.PropTypes.bool.isRequired,

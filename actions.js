@@ -1,5 +1,6 @@
 export const ADD_TODO = 'ADD_TODO'
 export const EDIT_TODO = 'EDIT_TEXT'
+export const DELETE_TODO = 'DELETE_TODO'
 export const TOGGLE_TODO = 'TOGGLE_TODO'
 export const TOGGLE_EDITING = 'TOGGLE_EDITING'
 
@@ -18,6 +19,13 @@ export function editTodo(text, todo) {
 		id: todo.id,
 		text,
 		type: EDIT_TODO
+	}
+}
+
+export function deleteTodo(id) {
+	return {
+		id,
+		type: DELETE_TODO
 	}
 }
 

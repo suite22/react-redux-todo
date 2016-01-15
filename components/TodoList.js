@@ -12,6 +12,7 @@ export default class TodoList extends React.Component {
 							onCheckboxClick = { () => this.props.onTodoClick(todo.id)}
 							onEditClick = { () => this.props.onEdit(todo.id)}
 							onSaveSubmit = { (text) => this.props.onSave(text, todo)}
+							onDeleteSubmit = { () => this.props.onDelete(todo.id)}
 						/>
 					)}
 				</div>
@@ -24,6 +25,7 @@ TodoList.propTypes = {
 	onTodoClick: React.PropTypes.func.isRequired,
 	onEdit: React.PropTypes.func.isRequired,
 	onSave: React.PropTypes.func.isRequired,
+	onDelete: React.PropTypes.func.isRequired,
 	todos: React.PropTypes.arrayOf(React.PropTypes.shape({
 		text: React.PropTypes.string.isRequired,
 		editing: React.PropTypes.bool.isRequired,
