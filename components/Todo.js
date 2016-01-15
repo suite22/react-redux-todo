@@ -59,7 +59,6 @@ Todo.propTypes = {
 	onCheckboxClick: React.PropTypes.func.isRequired,
 	onSaveSubmit: React.PropTypes.func.isRequired,
 	onEditClick: React.PropTypes.func.isRequired,
-	onTextEdit: React.PropTypes.func.isRequired,
 	text: React.PropTypes.string.isRequired,
 	editing: React.PropTypes.bool.isRequired,
 	completed: React.PropTypes.bool.isRequired
