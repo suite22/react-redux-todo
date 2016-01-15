@@ -1,16 +1,5 @@
 import { combineReducers } from 'redux'
-import { ADD_TODO, TOGGLE_TODO, SET_VISIBILTY_FILTER, VisibilityFilters } from './actions'
-
-const { SHOW_ALL } = VisibilityFilters
-
-function visibilityFilter(state = SHOW_ALL, action) {
-	switch (action.type) {
-		case SET_VISIBILTY_FILTER:
-			return action.filter
-		default:
-			return state
-	}
-}
+import { ADD_TODO, TOGGLE_TODO } from './actions'
 
 function todo(state, action) {
 	switch (action.type) {
@@ -27,6 +16,7 @@ function todo(state, action) {
 			return {
 				id: action.id,
 				text: state.text,
+				// TODO: Does flipping the state like this in the reducer make it impure?
 	        	completed: !state.completed
 	        }
 		default:
@@ -51,7 +41,6 @@ function todos(state = [], action) {
 }
 
 const todoApp = combineReducers({
-	visibilityFilter,
 	todos: todos
 })
 
