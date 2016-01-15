@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { ADD_TODO, TOGGLE_TODO, TOGGLE_EDITING } from './actions'
+import { ADD_TODO, EDIT_TODO, TOGGLE_TODO, TOGGLE_EDITING } from './actions'
 
 function todo(state, action) {
 	switch (action.type) {
@@ -9,6 +9,16 @@ function todo(state, action) {
 				text: action.text,
 				editing: false,
 				completed: false
+			}
+		case EDIT_TODO:
+			if (state.id !== action.id) {
+				return state
+			}
+			return {
+				id: action.id,
+				text: "test",
+				editing: state.editing,
+				completed: state.completed
 			}
 		case TOGGLE_TODO:
 			if (state.id !== action.id) {
@@ -43,6 +53,10 @@ function todos(state = [], action) {
 				...state,
 				todo(undefined, action)
 			]
+		case EDIT_TODO:
+			return state.map(task =>
+				todo(task, action)
+			)
 		case TOGGLE_TODO:
 			return state.map(task =>
 				todo(task, action)
