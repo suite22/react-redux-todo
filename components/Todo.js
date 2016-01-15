@@ -10,12 +10,6 @@ export default class Todo extends React.Component {
 		}
 	}
 	
-	handleChange(event) {
-		event.preventDefault()
-		const node = this.refs.editInput
-		const text = node.value.trim()
-	}
-	
 	render() {
 		var isEditing
 		
