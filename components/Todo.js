@@ -14,19 +14,26 @@ export default class Todo extends React.Component {
 		var isEditing
 		
 		if (this.props.editing === false) {
-			// don't show the button
+			// Display the todo item with a checkbox for completion
 			isEditing = (
-				<label
-					style={{
-						textDecoration: this.props.completed ? 'line-through' : 'none',
-						cursor: this.props.completed ? 'default' : 'pointer'
-					}}
-					onClick = { this.props.onEditClick }
-				>
-				{ this.props.text }
-				</label>
+				<div>
+					<input 
+						type = "checkbox"
+						onClick = { this.props.onCheckboxClick }
+					/>
+					<label
+						style={{
+							textDecoration: this.props.completed ? 'line-through' : 'none',
+							cursor: this.props.completed ? 'default' : 'pointer'
+						}}
+						onClick = { this.props.onEditClick }
+					>
+					{ this.props.text }
+					</label>
+				</div>
 			)
 		} else {
+			// Input field for editing the task title
 			isEditing = (
 				<form onSubmit = { (event) => this.handleSave(event) }>
 					<input type="text" ref="editInput" defaultValue={this.props.text} />
@@ -39,10 +46,6 @@ export default class Todo extends React.Component {
 		
 		return (
 			<div>
-				<input 
-					type = "checkbox"
-					onClick = { this.props.onCheckboxClick }
-				/>
 				{ isEditing }
 			</div>
 		)
