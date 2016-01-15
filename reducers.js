@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { ADD_TODO, TOGGLE_TODO } from './actions'
+import { ADD_TODO, TOGGLE_TODO, TOGGLE_EDITING } from './actions'
 
 function todo(state, action) {
 	switch (action.type) {
@@ -7,6 +7,7 @@ function todo(state, action) {
 			return {
 				id: action.id,
 				text: action.text,
+				editing: false,
 				completed: false
 			}
 		case TOGGLE_TODO:
@@ -16,9 +17,20 @@ function todo(state, action) {
 			return {
 				id: action.id,
 				text: state.text,
+				editing: state.editing,
 				// TODO: Does flipping the state like this in the reducer make it impure?
 	        	completed: !state.completed
 	        }
+		case TOGGLE_EDITING:
+			if (state.id !== action.id) {
+				return state
+			}
+			return {
+				id: action.id,
+				text: state.text,
+				editing: !state.editing,
+				completed: state.completed
+			}
 		default:
 			return state
 	}
@@ -32,6 +44,10 @@ function todos(state = [], action) {
 				todo(undefined, action)
 			]
 		case TOGGLE_TODO:
+			return state.map(task =>
+				todo(task, action)
+			)
+		case TOGGLE_EDITING:
 			return state.map(task =>
 				todo(task, action)
 			)

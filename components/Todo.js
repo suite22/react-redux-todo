@@ -29,5 +29,6 @@ export default class Todo extends React.Component {
 Todo.propTypes = {
 	onCheckboxClick: React.PropTypes.func.isRequired,
 	text: React.PropTypes.string.isRequired,
+	editing: React.PropTypes.bool.isRequired,
 	completed: React.PropTypes.bool.isRequired
 }
