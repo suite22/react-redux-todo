@@ -17,7 +17,7 @@ function todo(state, action) {
 			return {
 				id: action.id,
 				text: "test",
-				editing: state.editing,
+				editing: false,
 				completed: state.completed
 			}
 		case TOGGLE_TODO:

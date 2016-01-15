@@ -1,6 +1,15 @@
 import React from 'react'
 
 export default class Todo extends React.Component {
+	handleSave(event) {
+		event.preventDefault()
+		const node = this.refs.input
+		const text = node.value.trim()
+		if (text) {
+			this.props.onSaveClick()
+		}
+	}
+	
 	render() {
 		var saveButton
 		
