@@ -11,7 +11,8 @@ export default class TodoList extends React.Component {
 							key = { todo.id }
 							onCheckboxClick = { () => this.props.onTodoClick(todo.id)}
 							onEditClick = { () => this.props.onEdit(todo.id)}
-							onSaveClick = { () => this.props.onSave(todo.id, todo.text)}
+							onTextEdit = { () => this.props.onSave(todo.id, todo.text)}
+							onSaveSubmit = { () => this.props.onSave(todo.id, todo.text)}
 						/>
 					)}
 				</div>

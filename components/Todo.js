@@ -3,11 +3,17 @@ import React from 'react'
 export default class Todo extends React.Component {
 	handleSave(event) {
 		event.preventDefault()
-		const node = this.refs.input
+		const node = this.refs.editInput
 		const text = node.value.trim()
 		if (text) {
-			this.props.onSaveClick()
+			this.props.onSaveSubmit(text)
 		}
+	}
+	
+	handleChange(event) {
+		event.preventDefault()
+		const node = this.refs.editInput
+		const text = node.value.trim()
 	}
 	
 	render() {
@@ -29,7 +35,7 @@ export default class Todo extends React.Component {
 		} else {
 			isEditing = (
 				<form onSubmit = { (event) => this.handleSave(event) }>
-					<input type="text" ref="input" value={this.props.text} />
+					<input type="text" ref="editInput" defaultValue={this.props.text} />
 					<button>
 						Save
 					</button>
@@ -51,8 +57,9 @@ export default class Todo extends React.Component {
 
 Todo.propTypes = {
 	onCheckboxClick: React.PropTypes.func.isRequired,
-	onSaveClick: React.PropTypes.func.isRequired,
+	onSaveSubmit: React.PropTypes.func.isRequired,
 	onEditClick: React.PropTypes.func.isRequired,
+	onTextEdit: React.PropTypes.func.isRequired,
 	text: React.PropTypes.string.isRequired,
 	editing: React.PropTypes.bool.isRequired,
 	completed: React.PropTypes.bool.isRequired
