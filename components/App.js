@@ -10,14 +10,14 @@ class App extends React.Component {
 		const { dispatch, todos } = this.props
 		return (
 			<div>
-				<AddTodo
-					onAddSubmit = { text => dispatch(addTodo(text))} 
-				/>
 				<TodoList
 					todos = { todos }
 					onTodoClick = { id => dispatch(toggleTodo(id))}
 					onEdit = { id => dispatch(toggleEditing(id))}
 					onSave = { (id, text) => dispatch(editTodo(id, text))}
+				/>
+				<AddTodo
+					onAddSubmit = { text => dispatch(addTodo(text))} 
 				/>
 			<Footer />
 			</div>
