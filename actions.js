@@ -13,9 +13,9 @@ export function addTodo(text) {
 	}
 }
 
-export function editTodo(id, text) {
+export function editTodo(text) {
+	console.log(text)
 	return {
-		id,
 		type: EDIT_TODO,
 		text
 	}

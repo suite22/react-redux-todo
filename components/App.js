@@ -14,7 +14,7 @@ class App extends React.Component {
 					todos = { todos }
 					onTodoClick = { id => dispatch(toggleTodo(id))}
 					onEdit = { id => dispatch(toggleEditing(id))}
-					onSave = { (id, text) => dispatch(editTodo(id, text))}
+					onSave = { text => dispatch(editTodo(text))}
 				/>
 				<AddTodo
 					onAddSubmit = { text => dispatch(addTodo(text))} 

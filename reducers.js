@@ -16,8 +16,8 @@ function todo(state, action) {
 			}
 			console.log(action)
 			return {
-				id: action.id,
-				text: action.text + " hello",
+				id: state.id,
+				text: action.text,
 				editing: false,
 				completed: state.completed
 			}
