@@ -13,11 +13,11 @@ export function addTodo(text) {
 	}
 }
 
-export function editTodo(text) {
-	console.log(text)
+export function editTodo(text, todo) {
 	return {
-		type: EDIT_TODO,
-		text
+		id: todo.id,
+		text,
+		type: EDIT_TODO
 	}
 }
 

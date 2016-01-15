@@ -14,7 +14,6 @@ function todo(state, action) {
 			if (state.id !== action.id) {
 				return state
 			}
-			console.log(action)
 			return {
 				id: state.id,
 				text: action.text,
@@ -55,7 +54,6 @@ function todos(state = [], action) {
 				todo(undefined, action)
 			]
 		case EDIT_TODO:
-			console.log(state, action)
 			return state.map(task =>
 				todo(task, action)
 			)
