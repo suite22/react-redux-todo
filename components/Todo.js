@@ -11,16 +11,29 @@ export default class Todo extends React.Component {
 	}
 	
 	render() {
-		var saveButton
+		var isEditing
 		
 		if (this.props.editing === false) {
 			// don't show the button
-			saveButton = ""
+			isEditing = (
+				<label
+					style={{
+						textDecoration: this.props.completed ? 'line-through' : 'none',
+						cursor: this.props.completed ? 'default' : 'pointer'
+					}}
+					onClick = { this.props.onEditClick }
+				>
+				{ this.props.text }
+				</label>
+			)
 		} else {
-			saveButton = (
-				<button onClick = { this.props.onSaveClick } >
-					Save
-				</button>
+			isEditing = (
+				<form onSubmit = { (event) => this.handleSave(event) }>
+					<input type="text" ref="input" value={this.props.text} />
+					<button>
+						Save
+					</button>
+				</form>
 			)
 		}
 		
@@ -30,16 +43,7 @@ export default class Todo extends React.Component {
 					type = "checkbox"
 					onClick = { this.props.onCheckboxClick }
 				/>
-				<label
-					style={{
-	        			textDecoration: this.props.completed ? 'line-through' : 'none',
-	        			cursor: this.props.completed ? 'default' : 'pointer'
-	        		}}
-					onClick = { this.props.onEditClick }
-				>
-				{ this.props.text }
-				</label>
-				{ saveButton }
+				{ isEditing }
 			</div>
 		)
 	}
