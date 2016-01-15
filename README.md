@@ -1,4 +1,4 @@
-# Jama Software Technical Problem
+# Technical Problem
 
 Review the following technical problem. There are few basic requirements in the form of acceptance criteria but the design is completely open ended. This should be written entirely in client side languages, run in any modern browser (not including IE), and work without a server. The solution should be delivered via a git repo (preferred) or zip file.
 
@@ -29,6 +29,10 @@ As a user, I need a way to keep track of a list of tasks that I need to do today
 
 ## The Solution
 The goal is to build a nice example using React and Redux. 
+
+### Dependencies
+* Babel
+* Webpack
 
 ### Install Dev Environment
 * Make sure nvm is using the latest stable version instead of the system version.
