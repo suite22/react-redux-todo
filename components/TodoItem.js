@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class Todo extends React.Component {
+export default class TodoItem extends React.Component {
 	handleSave(event) {
 		event.preventDefault()
 		const node = this.refs.editInput
@@ -63,7 +63,7 @@ export default class Todo extends React.Component {
 	}
 }
 
-Todo.propTypes = {
+TodoItem.propTypes = {
 	onCheckboxClick: React.PropTypes.func.isRequired,
 	onSaveSubmit: React.PropTypes.func.isRequired,
 	onDeleteSubmit: React.PropTypes.func.isRequired,

@@ -1,5 +1,5 @@
 import React from 'react';
-import Todo from './Todo'
+import TodoItem from './TodoItem'
 
 export default class TodoList extends React.Component {
 	render() {
@@ -7,7 +7,7 @@ export default class TodoList extends React.Component {
 			<div>
 				<div>
 					{ this.props.todos.map( todo =>
-						<Todo { ...todo }
+						<TodoItem { ...todo }
 							key = { todo.id }
 							onCheckboxClick = { () => this.props.onTodoClick(todo.id)}
 							onEditClick = { () => this.props.onEdit(todo.id)}
