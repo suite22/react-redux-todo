@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import undoable, { distinctState } from 'redux-undo'
 import { ADD_TODO, EDIT_TODO, DELETE_TODO, TOGGLE_COMPLETION_TODO, TOGGLE_EDITING } from './actions'
 
 function todo(state, action) {
@@ -84,7 +85,8 @@ function todos(state = [], action) {
 }
 
 const todoApp = combineReducers({
-	todos: todos
+	todos: todos,
+	todos: undoable(todos, { filter: distinctState() })
 })
 
 export default todoApp
