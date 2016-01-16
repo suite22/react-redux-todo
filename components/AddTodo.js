@@ -15,7 +15,7 @@ export default class AddTodo extends React.Component {
 		return (
 			<div>
 				<form onSubmit = { (event) => this.handleSubmit(event) }>
-					<input type="text" ref="input" />
+					<input type="text" ref="input" placeholder="Add a todo..." />
 					<button>
 						Add
 					</button>
