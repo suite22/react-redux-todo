@@ -19,7 +19,7 @@ As a user, I need a way to keep track of a list of tasks that I need to do today
 
 2. [ ] Share tasks with others
 
-3. [ ] Restore removed tasks.
+3. [x] Restore removed tasks.
 
 ---
 
