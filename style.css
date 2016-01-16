@@ -7,6 +7,11 @@ body {
 	font-weight: 700;
 	font-size: larger;
 	margin-left: 7px;
+	margin-bottom: 5px;
+}
+
+.footer button {
+	margin: 7px;
 }
 
 .todoDisplay {

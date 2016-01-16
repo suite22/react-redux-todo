@@ -3,16 +3,16 @@ import React from 'react'
 export default class Footer extends React.Component {
 	renderUndo() {
 		return (
-			<p>
+			<div>
 				<button onClick={this.props.onUndo} disabled={this.props.undoDisabled}>Undo</button>
 				<button onClick={this.props.onRedo} disabled={this.props.redoDisabled}>Redo</button>
-			</p>
+			</div>
 		)
 	}
 	
 	render() {
 		return (
-			<div>
+			<div className="footer">
 				{ this.renderUndo() }
 			</div>
 		)
