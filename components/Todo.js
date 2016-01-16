@@ -24,7 +24,8 @@ export default class Todo extends React.Component {
 				<div>
 					<input 
 						type = "checkbox"
-						onClick = { this.props.onCheckboxClick }
+						checked = { this.props.completed }
+						onChange = { this.props.onCheckboxClick }
 					/>
 					<label
 						style={{
