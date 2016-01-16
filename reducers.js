@@ -15,7 +15,7 @@ function todo(state, action) {
 				return state
 			}
 			return {
-				id: state.id,
+				id: action.id,
 				text: action.text,
 				editing: false,
 				completed: state.completed
