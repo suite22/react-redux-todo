@@ -21,7 +21,7 @@ export default class Todo extends React.Component {
 		if (this.props.editing === false) {
 			// Display the todo item with a checkbox for completion
 			isEditing = (
-				<div>
+				<div className="todoDisplay">
 					<input 
 						type = "checkbox"
 						checked = { this.props.completed }
@@ -44,12 +44,14 @@ export default class Todo extends React.Component {
 		} else {
 			// Input field for editing the task title
 			isEditing = (
-				<form onSubmit = { (event) => this.handleSave(event) }>
-					<input type="text" ref="editInput" defaultValue={this.props.text} />
-					<button>
-						Save
-					</button>
-				</form>
+				<div className="todoEdit">
+					<form onSubmit = { (event) => this.handleSave(event) }>
+						<input type="text" ref="editInput" defaultValue={this.props.text} />
+						<button>
+							Save
+						</button>
+					</form>
+				</div>
 			)
 		}
 		

@@ -1,7 +1,17 @@
+.todoDisplay {
+	padding: 5px;
+}
+
+.todoEdit {
+}
+
 label {
 	padding: 10px;
 }
 
 form {
-	padding-top: 10px;
+}
+
+input[type=text] {
+	margin: 7px;
 }
