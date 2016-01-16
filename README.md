@@ -8,22 +8,18 @@ Please consider testability, documentation, and other good coding practices in y
 As a user, I need a way to keep track of a list of tasks that I need to do today, so that I can keep on task.
 
 ### Acceptance Criteria:
-1. View a list of tasks that I have previously created
-
-2. Add new tasks
-
-3. Mark tasks as being “done”
-
-4. Remove old tasks
-
-5. Edit tasks
+1. [x] View a list of tasks that I have previously created
+2. [x] Add new tasks
+3. [x] Mark tasks as being “done”
+4. [x] Remove old tasks
+5. [x] Edit tasks
 
 ### Bonus: 
-1. Persist tasks through session
+1. [ ] Persist tasks through session
 
-2. Share tasks with others
+2. [ ] Share tasks with others
 
-3. Restore removed tasks.
+3. [ ] Restore removed tasks.
 
 ---
 
