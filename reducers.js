@@ -58,10 +58,18 @@ function todos(state = [], action) {
 				todo(task, action)
 			)
 		case DELETE_TODO:
-			// important to use slice here so we don't mutate the original state.
+			// We need to find the index of the todo that matches 
+			// the id of the passed in action.id
+			var sliceKey
+			for (var todoItem of state) {
+				if (todoItem.id == action.id) {
+					sliceKey = state.indexOf(todoItem)
+				}
+			}
 			return state
-				.slice(0, action.id)
-				.concat(state.slice(action.id + 1))
+				// important to use slice here so we don't mutate the original state.
+				.slice(0, sliceKey)
+				.concat(state.slice(sliceKey + 1))
 		case TOGGLE_TODO:
 			return state.map(task =>
 				todo(task, action)
