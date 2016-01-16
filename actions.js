@@ -1,7 +1,7 @@
 export const ADD_TODO = 'ADD_TODO'
 export const EDIT_TODO = 'EDIT_TEXT'
 export const DELETE_TODO = 'DELETE_TODO'
-export const TOGGLE_TODO = 'TOGGLE_TODO'
+export const TOGGLE_COMPLETION_TODO = 'TOGGLE_COMPLETION_TODO'
 export const TOGGLE_EDITING = 'TOGGLE_EDITING'
 
 let nextTodoId = 0
@@ -14,9 +14,9 @@ export function addTodo(text) {
 	}
 }
 
-export function editTodo(text, todo) {
+export function editTodo(id, text) {
 	return {
-		id: todo.id,
+		id,
 		text,
 		type: EDIT_TODO
 	}
@@ -29,10 +29,10 @@ export function deleteTodo(id) {
 	}
 }
 
-export function toggleTodo(id) {
+export function toggleCompletionTodo(id) {
 	return { 
 		id,
-		type: TOGGLE_TODO
+		type: TOGGLE_COMPLETION_TODO
 	}
 }
 

@@ -1,0 +1,28 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+	padding: 10px;
+}
+
+.header {
+	font-weight: 700;
+	font-size: larger;
+	margin-left: 7px;
+}
+
+.todoDisplay {
+	padding: 5px;
+}
+
+.todoEdit {
+}
+
+label {
+	padding: 10px;
+}
+
+form {
+}
+
+input[type=text] {
+	margin: 7px;
+}

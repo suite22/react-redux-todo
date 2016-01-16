@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo, editTodo, deleteTodo, toggleTodo, toggleEditing } from '../actions'
+import { addTodo, editTodo, deleteTodo, toggleCompletionTodo, toggleEditing } from '../actions'
+import Header from './Header'
 import AddTodo from './AddTodo'
 import TodoList from './TodoList'
 import Footer from './Footer'
@@ -10,17 +11,18 @@ class App extends React.Component {
 		const { dispatch, todos } = this.props
 		return (
 			<div>
+				<Header />
 				<TodoList
 					todos = { todos }
-					onTodoClick = { id => dispatch(toggleTodo(id))}
+					onTodoClick = { id => dispatch(toggleCompletionTodo(id))}
 					onEdit = { id => dispatch(toggleEditing(id))}
-					onSave = { (text, todo) => dispatch(editTodo(text, todo))}
+					onSave = { (id, newText) => dispatch(editTodo(id, newText))}
 					onDelete = { id => dispatch(deleteTodo(id))}
 				/>
 				<AddTodo
 					onAddSubmit = { text => dispatch(addTodo(text))} 
 				/>
-			<Footer />
+				<Footer />
 			</div>
 		)
 	}

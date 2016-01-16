@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class Todo extends React.Component {
+export default class TodoItem extends React.Component {
 	handleSave(event) {
 		event.preventDefault()
 		const node = this.refs.editInput
@@ -21,10 +21,11 @@ export default class Todo extends React.Component {
 		if (this.props.editing === false) {
 			// Display the todo item with a checkbox for completion
 			isEditing = (
-				<div>
+				<div className="todoDisplay">
 					<input 
 						type = "checkbox"
-						onClick = { this.props.onCheckboxClick }
+						checked = { this.props.completed }
+						onChange = { this.props.onCheckboxClick }
 					/>
 					<label
 						style={{
@@ -43,12 +44,14 @@ export default class Todo extends React.Component {
 		} else {
 			// Input field for editing the task title
 			isEditing = (
-				<form onSubmit = { (event) => this.handleSave(event) }>
-					<input type="text" ref="editInput" defaultValue={this.props.text} />
-					<button>
-						Save
-					</button>
-				</form>
+				<div className="todoEdit">
+					<form onSubmit = { (event) => this.handleSave(event) }>
+						<input type="text" ref="editInput" defaultValue={this.props.text} />
+						<button>
+							Save
+						</button>
+					</form>
+				</div>
 			)
 		}
 		
@@ -60,7 +63,7 @@ export default class Todo extends React.Component {
 	}
 }
 
-Todo.propTypes = {
+TodoItem.propTypes = {
 	onCheckboxClick: React.PropTypes.func.isRequired,
 	onSaveSubmit: React.PropTypes.func.isRequired,
 	onDeleteSubmit: React.PropTypes.func.isRequired,
