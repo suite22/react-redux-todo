@@ -35,11 +35,9 @@ export default class Todo extends React.Component {
 					>
 					{ this.props.text }
 					</label>
-					<form onSubmit = { (event) => this.handleDelete(event)}>
-						<button>
-							Delete
-						</button>
-					</form>
+					<button onClick = { (event) => this.handleDelete(event)}>
+						Delete
+					</button>
 				</div>
 			)
 		} else {
